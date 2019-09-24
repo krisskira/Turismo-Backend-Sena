@@ -3,7 +3,7 @@ const database = require('../bin/sequelize')
 var express = require('express');
 var router = express.Router();
 
-router.get('/', function(req, res, next) {
+router.post('/', function(req, res, next) {
   
   let Sites = database.entities.Sities
   
@@ -17,6 +17,19 @@ router.get('/', function(req, res, next) {
   })
   .then( site => {
     res.json({ error: false, id:site._id })
+  })
+  .catch( error => {
+    res.json({ error: true, message: error.errors })
+  })
+});
+
+router.get('/', function(req, res, next) {
+  
+  let Sites = database.entities.Sities
+  
+  Sites.findAll()
+  .then( sites => {
+    res.json({ error: false, sites })
   })
   .catch( error => {
     res.json({ error: true, message: error.errors })
