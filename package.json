@@ -1,0 +1,25 @@
+{
+  "name": "turismo-sena",
+  "version": "0.0.1",
+  "description": "Proyecto final especializacion en desarrollo de aplicaciones moviles.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krisskira/turismo-sena.git"
+  },
+  "keywords": [
+    "Turismo"
+  ],
+  "author": "Crhistian David Vergara Gomez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/krisskira/turismo-sena/issues"
+  },
+  "homepage": "https://github.com/krisskira/turismo-sena#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
