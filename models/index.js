@@ -1,9 +1,9 @@
-const Sites = require('./sites')
-const Hotels = require('./operators')
-const Operators = require('./operators')
+const Hotels = require('hotels')
+const Sites = require('sites')
+const Operators = require('operators')
 
 module.exports = {
-    Sites,
     Hotels,
+    Sites,
     Operators
 }
