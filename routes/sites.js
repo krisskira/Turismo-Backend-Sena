@@ -1,12 +1,12 @@
-const database = require("../bin/sequelize");
+const database = require("../bin/database/sequelize");
 
 var express = require("express");
 var router = express.Router();
 
 router.post("/", function (req, res, next) {
   
-  let Sities = database.entities.Sities;
-  Sities.create({ ...req.body })
+  let Sites = database.entities.Sites;
+  Sites.create({ ...req.body })
     .then(site => res.status(201).json({ id: site._id }))
     .catch(error => res.status(500).json({ error }));
 });
@@ -14,8 +14,8 @@ router.post("/", function (req, res, next) {
 router.put("/:id", function (req, res, next) {
 
   _id = parseInt(req.params.id) || 0;
-  let Sities = database.entities.Sities;
-  Sities.update( {...req.body} ,{ where: { _id } })
+  let Sites = database.entities.Sites;
+  Sites.update( {...req.body} ,{ where: { _id } })
     .then( ([numberOfAffectedRows]) => {
       code = numberOfAffectedRows > 0 ? 204 : 404
       res.status(code).end()
@@ -25,17 +25,17 @@ router.put("/:id", function (req, res, next) {
 
 router.get("/", function (req, res, next) {
 
-  let Sities = database.entities.Sities;
-  Sities.findAll()
-    .then(sities => { res.json([...sities]) })
+  let Sites = database.entities.Sites;
+  Sites.findAll()
+    .then(sites => { res.json([...sites]) })
     .catch(error => { res.status(500).json({ error }) })
 });
 
 router.delete("/:id", function (req, res, next) {
 
   _id = parseInt(req.params.id) || 0;
-  let Sities = database.entities.Sities;
-  Sities.destroy({ where: { _id } })
+  let Sites = database.entities.Sites;
+  Sites.destroy({ where: { _id } })
     .then(numberOfAffectedRows => {
       code = numberOfAffectedRows > 0 ? 204 : 404
       res.status(code).end()

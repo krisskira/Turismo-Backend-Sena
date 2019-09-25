@@ -1,4 +1,4 @@
-const database = require("../bin/sequelize");
+const database = require("../bin/database/sequelize");
 
 var express = require("express");
 var router = express.Router();

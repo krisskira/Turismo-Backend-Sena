@@ -1,4 +1,4 @@
-create table sities (
+create table sites (
   _id         serial,  
   description varchar(50),
   address     varchar(50),
