@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 module.exports = sequelize => {
-    return sequelize.define('sities', {
+    return sequelize.define('sites', {
     // attributes
     _id: {
         type: Sequelize.INTEGER,
