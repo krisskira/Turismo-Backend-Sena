@@ -1,5 +1,5 @@
 const Sites = require('./sites')
-const Hotels = require('./hotels')
+const Hotels = require('./operators')
 const Operators = require('./operators')
 
 module.exports = {
